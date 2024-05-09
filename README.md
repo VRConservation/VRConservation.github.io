@@ -1,2 +1,2 @@
 # 3Point.xyz
-3Point.xyz website connete to jupyter books
+3Point.xyz website homepage and publications
