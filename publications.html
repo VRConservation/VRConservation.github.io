@@ -1,25 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications</title>
     <style>
         .blue-block {
-            background-color: #1D809F; 
+            background-color: #1D809F;
             color: white;
             padding: 20px;
         }
+
+        .banner-container {
+            position: relative;
+            width: 100%;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .banner-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .banner-text {
+            position: absolute;
+            top: 15%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 18px;
+            text-align: center;
+        }
     </style>
 </head>
+
 <body>
     <div class="blue-block">
         <h1>Publications</h1>
-        <h3>Under Construction!</h3>
+        <!-- <h3>Under Construction!</h3> -->
     </div>
-    <img src="/pics/boli_banner.png" width="680" height="200" alt="dem image Bolivia">
- 
+    <div class="banner-container">
+        <img src="/pics/boli_banner.png" alt="dem image Bolivia">
+        <div class="banner-text">
+            <a href="https://3point.xyz/geosp" style= "color: white; text-decoration: none;">Free & Open Source Geospatial Tools</a>
+        </div>
+    </div>
     <br>
-    <a href="index.html" style="color: black; text-decoration: none;" onmouseover="this.style.color='#1D809F';" onmouseout="this.style.color='black';">3point.xyz</a>
+    <a href="index.html" style="color: black; text-decoration: none;" onmouseover="this.style.color='#1D809F';"
+        onmouseout="this.style.color='black';">3point.xyz</a>
 </body>
+
 </html>
