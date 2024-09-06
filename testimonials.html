@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            /* Optional: Set text color to white for better readability */
+        }
+    </style>
+</head>
+
+<h1>Testimonials <code></code></h1>
+
+
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" overflow="auto"
+    shape-rendering="auto" fill="currentColor">
+    <defs>
+        <path id="wave" d="M 0 2000 0 500 Q 120 420 300 500 t 300 0 300 0 300 0 300 0 300 0  v700 z" />
+        <path id="wave-path" d="M -600 0 0 0" />
+    </defs>
+    <g>
+        <use xlink:href="#wave" x="-100" y="-200" fill="rgba(2, 132, 199, 0.5)">
+            <animateMotion dur="10s" repeatCount="indefinite">
+                <mpath xlink:href="#wave-path" />
+            </animateMotion>
+        </use>
+        <use xlink:href="#wave" x="0" y="-180" fill="rgba(2, 132, 199, 0.4)" opacity="50%">
+            <animateMotion dur="6s" repeatCount="indefinite">
+                <mpath xlink:href="#wave-path" />
+            </animateMotion>
+        </use>
+        <use xlink:href="#wave" x="0" y="-280" fill="rgba(22, 132, 199, 0.2)">
+            <animateMotion dur="14s" repeatCount="indefinite">
+                <mpath xlink:href="#wave-path" />
+            </animateMotion>
+        </use>
+    </g>
+</svg>
