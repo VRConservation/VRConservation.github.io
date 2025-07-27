@@ -1,0 +1,517 @@
+/* Showreel Section Integration CSS */
+/* Use this file when integrating the showreel as a section in an existing website */
+
+/* Section Container */
+.showreel-section {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Adjust as needed - can be fixed height like 600px */
+    min-height: 500px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+    font-family: 'Dopis', sans-serif;
+    font-weight: 700;
+    /* Performance optimizations */
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Reset only within showreel section */
+.showreel-section * {
+    box-sizing: border-box;
+}
+
+/* Container */
+.showreel-section .showreel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Navigation - positioned absolute within section */
+.showreel-section .showreel-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+}
+
+.showreel-section .nav-brand h1 {
+    font-family: 'Dopis', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* Progress counter positioned in upper right */
+.showreel-section .slide-counter-top {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+.showreel-section .slide-counter-top .divider {
+    opacity: 0.5;
+    margin: 0 8px;
+}
+
+/* Slider */
+.showreel-section .slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.showreel-section .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.showreel-section .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1;
+    /* Performance optimizations */
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+}
+
+.showreel-section .slide.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+}
+
+.showreel-section .slide-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.showreel-section .slide-bg video,
+.showreel-section .slide-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* Performance optimizations */
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Slow zoom effect for static images */
+.showreel-section .slide.active .slide-bg img {
+    animation: slowZoom 15s ease-in-out infinite alternate;
+}
+
+/* Keyframes for slow zoom animation */
+@keyframes slowZoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.08);
+    }
+}
+
+/* Video fallback styling */
+.showreel-section .slide-bg video img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: -1;
+}
+
+.showreel-section .slide-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg,
+        rgba(0,0,0,0.4) 0%,
+        rgba(0,0,0,0.2) 50%,
+        rgba(0,0,0,0.6) 100%
+    );
+}
+
+/* Lighter overlay for Caldor Fire Recovery slide */
+.showreel-section .slide:first-child .slide-bg::after {
+    background: linear-gradient(
+        45deg,
+        rgba(0,0,0,0.2) 0%,
+        rgba(0,0,0,0.1) 50%,
+        rgba(0,0,0,0.3) 100%
+    );
+}
+
+/* Slide Content */
+.showreel-section .slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 80px 50px 100px;
+    z-index: 10;
+    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    max-height: calc(100vh - 120px); /* Ensure content doesn't overflow above nav */
+    overflow: hidden;
+}
+
+/* Logo Overlay */
+.showreel-section .slide-logo {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    z-index: 15;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease 0.5s;
+}
+
+.showreel-section .slide.active .slide-logo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.showreel-section .slide-logo img {
+    max-width: 120px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+}
+
+/* Lighter bottom gradient for Caldor Fire Recovery slide */
+.showreel-section .slide:first-child .slide-content {
+    background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+}
+
+.showreel-section .slide-info {
+    max-width: 600px;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.8s ease 0.3s;
+}
+
+.showreel-section .slide.active .slide-info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.showreel-section .category {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.showreel-section .slide-title {
+    font-family: 'Dopis', sans-serif;
+    font-size: clamp(48px, 10vw, 72px); /* Reduced to 72px max */
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    margin-top: 0;
+    background: linear-gradient(135deg, #fff 0%, #ccc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.showreel-section .slide-description {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.showreel-section .view-project-btn {
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.showreel-section .view-project-btn:hover {
+    border-color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* Progress Bar */
+.showreel-section .progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255,255,255,0.2);
+    z-index: 1000;
+}
+
+.showreel-section .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #fff 0%, #ccc 100%);
+    width: 25%;
+    transition: width 0.8s ease;
+}
+
+/* Side Navigation Text Buttons */
+.showreel-section .text-nav-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.showreel-section .text-nav-btn {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.6);
+    font-family: 'Dopis', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    padding: 10px 0;
+    position: relative;
+}
+
+.showreel-section .text-nav-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+.showreel-section .text-nav-btn:hover {
+    color: #fff;
+}
+
+.showreel-section .text-nav-btn:hover::after {
+    width: 100%;
+}
+
+.showreel-section .prev-text-btn {
+    text-align: left;
+}
+
+.showreel-section .next-text-btn {
+    text-align: right;
+}
+
+/* Side Navigation Dots */
+.showreel-section .slide-dots {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.showreel-section .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.showreel-section .dot.active {
+    background: #fff;
+    transform: scale(1.2);
+}
+
+.showreel-section .dot:hover {
+    background: rgba(255,255,255,0.8);
+    transform: scale(1.1);
+}
+
+/* Responsive Design for Section */
+@media (max-width: 1024px) {
+    .showreel-section {
+        height: 70vh;
+        min-height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .showreel-section {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .showreel-section .showreel-nav {
+        padding: 20px 30px;
+    }
+    
+    .showreel-section .nav-brand h1 {
+        font-size: 20px;
+    }
+    
+    .showreel-section .slide-counter-top {
+        font-size: 12px;
+    }
+    
+    .showreel-section .slide-dots {
+        right: 30px;
+        gap: 12px;
+    }
+    
+    .showreel-section .dot {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .showreel-section .slide-content {
+        padding: 60px 30px 80px;
+    }
+    
+    .showreel-section .slide-title {
+        font-size: clamp(32px, 12vw, 56px);
+        margin-top: 30px;
+    }
+    
+    .showreel-section .slide-description {
+        font-size: 14px;
+    }
+    
+    .showreel-section .text-nav-buttons {
+        padding: 0 30px;
+    }
+    
+    .showreel-section .text-nav-btn {
+        font-size: 10px;
+    }
+    
+    .showreel-section .view-project-btn {
+        padding: 10px 25px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .showreel-section {
+        height: 50vh;
+        min-height: 350px;
+    }
+    
+    .showreel-section .showreel-nav {
+        padding: 15px 20px;
+    }
+    
+    .showreel-section .slide-content {
+        padding: 40px 20px 60px;
+    }
+    
+    .showreel-section .text-nav-buttons {
+        padding: 0 20px;
+    }
+    
+    .showreel-section .slide-title {
+        font-size: clamp(28px, 10vw, 42px);
+        margin-top: 0;
+    }
+    
+    .showreel-section .slide-counter-top {
+        left: 20px;
+        top: 70%;
+        font-size: 11px;
+    }
+    
+    .showreel-section .slide-dots {
+        right: 20px;
+        gap: 10px;
+    }
+    
+    .showreel-section .dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* Loading Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.showreel-section .slide.active .category {
+    animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+.showreel-section .slide.active .slide-title {
+    animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.showreel-section .slide.active .slide-description {
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.showreel-section .slide.active .view-project-btn {
+    animation: fadeInUp 0.8s ease 0.5s both;
+}
