@@ -8,7 +8,7 @@ class ShowreelSlider {
         this.totalSlides = this.slides.length;
         this.isAnimating = false;
         this.autoplayInterval = null;
-        this.autoplayDelay = 6000; // 6 seconds
+        this.autoplayDelay = 8000; // 8 seconds
         this.isVisible = true;
         this.touchStartX = 0;
         this.touchEndX = 0;

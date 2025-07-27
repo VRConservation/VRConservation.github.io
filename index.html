@@ -30,6 +30,8 @@
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <!-- Showreel CSS -->
+        <link href="css/showreel-section.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -109,11 +111,11 @@
                         <h4><strong>Integration</strong></h4>
                         <p class="text-faded mb-0">Implement at a meaninguful scale across organizations</p>
                     </div>
-                 </div>
+                </div>
                 </p>
                 <br>
                 <br>
-                    <h3 class="'mb-5">We triangulate the data, people, & ecosystems to maximize your success</h3>
+                    <h3 class="mb-5">We triangulate the data, people, & ecosystems to maximize your success</h3>
             </div>
         </section>
         <!-- Callout-->
@@ -128,63 +130,142 @@
                 <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/theme/stylish-portfolio/">Download Now!</a>
             </div> -->
         </section>
-        <!-- Portfolio-->
-        <section class="content-section" id="portfolio">
-            <div class="container px-4 px-lg-5">
-                <div class="content-section-heading text-center">
-                    <!-- Main heading -->
-                    <h2 class="mb-5">Recent Projects</h2>
-                    <!-- Subheading -->
-                    <p style="font-size: 14px; color: gray;">
-                        For a more detailed list of projects, see 
-                        <a href="projects.html" style="color: #1D809F; text-decoration: underline;">Projects</a>
-                    </p>
+        <!-- SHOWREEL SECTION  -->
+        <section class="showreel-section" id="portfolio">
+            <div class="showreel-container">
+                <!-- Navigation -->
+                <nav class="showreel-nav">
+                    <div class="nav-brand">
+                        <h1>RECENT PROJECTS</h1>
+                    </div>
+                    <!-- Progress counter positioned upper right -->
+                    <div class="slide-counter-top">
+                        <span id="currentSlide">01</span>
+                        <span class="divider">/</span>
+                        <span id="totalSlides">05</span>
+                    </div>
+                </nav>
+                <!-- Main Slider -->
+                <div class="slider-wrapper">
+                    <div class="slider" id="slider">
+                        <!-- Slide 1: FBA-->
+                        <div class="slide active">
+                            <div class="slide-bg">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="assets/video/1. fba.mp4" type="video/mp4">
+                                    <img src="assets/Contour1.jpg" alt="FBA fallback">
+                                </video>
+                            </div>
+                            <div class="slide-logo">
+                                <img src="assets/logos/calfire.png" alt="Forest Business Alliance Logo">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-info">
+                                    <h2 class="slide-title">forest business alliance</h2>
+                                    <p class="slide-description">
+                                        Providing technical assistance, workshops, and a peer-learning network to increase local and regional capacity for forest health projects and businesses
+                                    </p>
+                                    <a href="https://www.forestbusinessalliance.org/" class="view-project-btn" target="_blank">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2: HELP -->
+                        <div class="slide">
+                            <div class="slide-bg">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="assets/video/2. help.mp4" type="video/mp4">
+                                    <img src="assets/wrights.jpg" alt="HELP fallback">
+                                </video>
+                            </div>
+                            <div class="slide-logo">
+                                <img src="assets/logos/usfs.png" alt="HELP Logo">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-info">
+                                    <h2 class="slide-title">help</h2>
+                                    <p class="slide-description">
+                                        Comprehensive watershed restoration focusing on forest health, water quality, and ecosystem resilience in the Eldorado National Forest.
+                                    </p>
+                                    <a href="https://healthyeldo.github.io/" class="view-project-btn" target="_blank">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3: NCRP -->
+                        <div class="slide">
+                            <div class="slide-bg">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="assets/video/3. ncrp.mp4" type="video/mp4">
+                                    <img src="assets/caldor.jpg" alt="NCRP fallback">
+                                </video>
+                            </div>
+                            <div class="slide-logo">
+                                <img src="assets/logos/ncrp.png" alt="NCRP Logo">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-info">
+                                    <h2 class="slide-title">ncrp</h2>
+                                    <p class="slide-description">
+                                        North Coast Resource Partnership Strategic advisor. Current project is community-based insurance for climate disasters.
+                                    </p>
+                                    <a href="https://northcoastresourcepartnership.org/" class="view-project-btn" target="_blank">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 4:  watershed benefits-->
+                        <div class="slide">
+                            <div class="slide-bg">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="assets/video/4. benefits.mp4" type="video/mp4">
+                                    <img src="assets/wrights.jpg" alt="watershed benefits fallback">
+                                </video>
+                            </div>
+                            <div class="slide-logo">
+                                <img src="assets/logos/wrtc.png" alt="Watershed Outcomes Benefits Logo">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-info">
+                                    <h2 class="slide-title">watershed outcomes benefits</h2>
+                                    <p class="slide-description">
+                                        Landscape finance analysis that quantifies and monetizes the environmental benefits of watershed restoration projects.
+                                    </p>
+                                    <a href="wob.html" class="view-project-btn">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 5:  Rio Lempa-->
+                        <div class="slide">
+                            <div class="slide-bg">
+                                <video autoplay muted loop playsinline preload="metadata">
+                                    <source src="assets/video/5. lempa.mp4" type="video/mp4">
+                                    <img src="assets/wrights.jpg" alt="Rio Lempa fallback">
+                                </video>
+                            </div>
+                            <div class="slide-logo">
+                                <img src="assets/logos/lempa.png" alt="Rio Lempa Logo">
+                            </div>
+                            <div class="slide-content">
+                                <div class="slide-info">
+                                    <h2 class="slide-title">rio lempa</h2>
+                                    <p class="slide-description">
+                                        Lansdcape finance and outcomes quantification for the Rio Lempa Reserve, El Salvador.
+                                    </p>
+                                    <a href="wob.html" class="view-project-btn">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="row gx-0">
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Forest Business Alliance</div>
-                                    <p class="mb-0">Building forest health and wood products capacity with CAL FIRE's Business & Workforce Development Program</p>
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/Contour1.JPG" alt="...">
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Healthy Eldorado Landscape Partnership</div>
-                                    <p class="mb-0">Innovative finance & partner solutions for the Eldorado National Forest</p>
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/Contour2.JPG" alt="..." />
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Resources Legacy Fund</div>
-                                    <p class="mb-0">Developing & implementing the State-owned Lands Forest Resilience Strategy for the Wildfire Resilience Task Force</p>
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/Contour3.JPG" alt="..." />
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="#!">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">North Coast Resource Partnership</div>
-                                    <p class="mb-0">Forest health and fire capacity technical & advisory support in the NCRP region</p>
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/Contour4.JPG" alt="..." />
-                        </a>
-                    </div>
+                <!-- Progress Bar -->
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <!-- Side Navigation Dots -->
+                <div class="slide-dots">
+                    <button class="dot active" data-slide="0"></button>
+                    <button class="dot" data-slide="1"></button>
+                    <button class="dot" data-slide="2"></button>
+                    <button class="dot" data-slide="3"></button>
+                    <button class="dot" data-slide="4"></button>
                 </div>
             </div>
         </section>
@@ -235,5 +316,9 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <!-- Showreel JS -->
+        <script src="js/showreel-slider.js"></script>
+        <!-- Dot Navigation Fix -->
+        <script src="js/dot-navigation-fix.js"></script>
     </body>
 </html>
