@@ -1,0 +1,30 @@
+/* Collapsible sections styling */
+
+/* Custom spacing for project entries */
+.project-section p {
+    margin-bottom: 5px !important;
+}
+
+/* Keep normal spacing for placeholder text */
+.project-section p.text-muted {
+    margin-bottom: 1rem !important;
+}
+
+/* Collapsible section styles */
+.section-header {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.section-header:hover {
+    opacity: 0.8;
+}
+
+.collapse-arrow {
+    transition: transform 0.3s ease;
+    float: right;
+}
+
+.section-header[aria-expanded="true"] .collapse-arrow {
+    transform: rotate(180deg);
+}
