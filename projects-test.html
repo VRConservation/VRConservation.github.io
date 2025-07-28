@@ -29,6 +29,25 @@
             .project-section p.text-muted {
                 margin-bottom: 1rem !important;
             }
+            
+            /* Collapsible section styles */
+            .section-header {
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .section-header:hover {
+                opacity: 0.8;
+            }
+            
+            .collapse-arrow {
+                transition: transform 0.3s ease;
+                float: right;
+            }
+            
+            .section-header[aria-expanded="true"] .collapse-arrow {
+                transform: rotate(180deg);
+            }
         </style>
     </head>
     <body id="page-top">
@@ -62,60 +81,16 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-10">
                         
-                        <!-- Conservation Section -->
-                        <div id="conservation" class="project-section mb-3">
-                            <h2 class="text-center mb-4" style="color: #1e7e34; border-bottom: 2px solid #1e7e34; padding-bottom: 10px;">
-                                <i class="fas fa-leaf me-2"></i>CONSERVATION
-                            </h2>
-                            <div class="conservation-projects">
-                                <!-- Projects will be added here -->
-                            <p><strong>Cranborne Chase National Landscape</strong>. Environmental Land Management Test and Trial and Natural Capital Assessment.</p>
-                            <p><strong>Defenders of Wildlife</strong>. California Wolves Pay-for-Presence Program.</p>
-                            <p><strong>Fauna & Flora International</strong>. Interim Latin America & Caribbean Program Director.</p>
-                            <p><strong>Rio Lempa Reserve</strong>. Landscape conservation, finance, and outcomes quantification for the Rio Lempa Reserve, El Salvador.</p>
-                            <p><strong>The Nature Conservancy</strong>. Latin America & Caribbean Program Biodiversity and Human Ecological Analysis Tools.</p>
-                            <p><strong>Zoological Society of London</strong>. Strategic program advice for Southeast Asia and Africa Programs.</p>
-                            </div>
-                        </div>
-
-                        <!-- Ecosystem Services Section -->
-                        <div id="ecosystem-services" class="project-section mb-3">
-                            <h2 class="text-center mb-4" style="color: #17a2b8; border-bottom: 2px solid #17a2b8; padding-bottom: 10px;">
-                                <i class="fas fa-globe me-2"></i>ECOSYSTEM SERVICES
-                            </h2>
-                            <div class="ecosystem-services-projects">
-                                <!-- Projects will be added here -->
-                            <p><strong>British Hemp Association</strong>. Pollinator field surveys and geospatial analysis.</p>
-                            <p><strong>Environmental Defense Fund</strong>. United States and European Union Field Margin Policy and Ecosystem Service Benefits Analysis.</p>
-                            <p><strong>North Coast Resource Partnership</strong>. Climate disaster insurance strategy (Flooding, Sea Level Rise, Wildfire).</p>
-                            <p><strong>The Watershed Research and Training Center</strong>. Water Related Ecosystem Benefits and Beneficiary Geospatial Database. Led by Spatial Informatics Group and FlowWest.</p>
-                            <p><strong>United States Forest Service International Programs</strong>. Ecosystem Service Assessment of Zimbabwe's Parks.</p>
-                            <p><strong>WWF UK</strong>. WWF UK nature, agriculture, and global footprint strategy.</p>
-                            </div>
-                        </div>
-
-                        <!-- Finance Section -->
-                        <div id="finance" class="project-section mb-3">
-                            <h2 class="text-center mb-4" style="color: #f39c12; border-bottom: 2px solid #f39c12; padding-bottom: 10px;">
-                                <i class="fas fa-dollar-sign me-2"></i>FINANCE
-                            </h2>
-                            <div class="finance-projects">
-                                <!-- Projects will be added here -->
-                            <p><strong>Air Carbon Exchange</strong>. Creating a forest health benefits marketplace.</p>
-                            <p><strong>American Rivers</strong>. Implementation and scaling of innovative water and forest restoration funding in the Western United States.</p>
-                            <p><strong>Distributed Energy Financial Group</strong>. Behavioral Resource Economics and Energy Conservation Study.</p>
-                            <p><strong>Fall River Resource Conservation District</strong>. Conservation Finance Roadmap, Feedstock Aggregation Pilot Joint Powers Authority Funding Strategy.</p>
-                            <p><strong>Healthy Eldorado Landscape Partnership</strong>. Creation and implementation of a landscape collaborative and conservation finance across the Eldorado National Forest.</p>
-                            </div>
-                        </div>
-
                         <!-- Forest Health Section -->
                         <div id="forest-health" class="project-section mb-3">
-                            <h2 class="text-center mb-4" style="color: #28a745; border-bottom: 2px solid #28a745; padding-bottom: 10px;">
+                            <h2 class="text-center mb-4 section-header" style="color: #28a745; border-bottom: 2px solid #28a745; padding-bottom: 10px;"
+                                data-bs-toggle="collapse" data-bs-target="#forestContent" aria-expanded="false" aria-controls="forestContent">
                                 <i class="fas fa-tree me-2"></i>FOREST HEALTH
+                                <i class="fas fa-chevron-down collapse-arrow"></i>
                             </h2>
-                            <div class="forest-health-projects">
-                                <!-- Projects will be added here -->
+                            <div class="collapse" id="forestContent">
+                                <div class="forest-health-projects">
+                            <!-- Add projects here -->
                             <!-- <p><strong>Burnbot</strong>. Geospatial prioritization of project treatment areas in the Sierra Nevada, California.</p> -->
                             <p><strong>California Department of Forestry and Fire Protection (CAL FIRE)</strong>. Forest Health Program Strategy.</p>
                             <p><strong>California Department of Forestry and Fire Protection (CAL FIRE)</strong>. Forest Business Alliance.</p>
@@ -126,6 +101,66 @@
                             <p><strong>Resources Legacy Fund</strong>. State-owned Lands Forest Resilience Strategy for the Wildfire Resilience Task Force.</p>
                             <p><strong>Sonoma County Woody Material Pilot</strong>. Technical, geospatial analysis, and modeling to support woody material utilization.</p>
                             <p><strong>Yuba Water Agency</strong>. Yuba County Forest Business Alliance Pilot.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conservation Section -->
+                        <div id="conservation" class="project-section mb-3">
+                            <h2 class="text-center mb-4 section-header" style="color: #1e7e34; border-bottom: 2px solid #1e7e34; padding-bottom: 10px;" 
+                                data-bs-toggle="collapse" data-bs-target="#conservationContent" aria-expanded="false" aria-controls="conservationContent">
+                                <i class="fas fa-leaf me-2"></i>CONSERVATION
+                                <i class="fas fa-chevron-down collapse-arrow"></i>
+                            </h2>
+                            <div class="collapse" id="conservationContent">
+                                <div class="conservation-projects">
+                            <!-- Add projects here -->
+                            <p><strong>Cranborne Chase National Landscape</strong>. Environmental Land Management Test and Trial and Natural Capital Assessment.</p>
+                            <p><strong>Defenders of Wildlife</strong>. California Wolves Pay-for-Presence Program.</p>
+                            <p><strong>Fauna & Flora International</strong>. Interim Latin America & Caribbean Program Director.</p>
+                            <p><strong>Rio Lempa Reserve</strong>. Landscape conservation, finance, and outcomes quantification for the Rio Lempa Reserve, El Salvador. Led by Aegis Conservation.</p>
+                            <p><strong>The Nature Conservancy</strong>. Latin America & Caribbean Program Biodiversity and Human Ecological Analysis Tools.</p>
+                            <p><strong>Zoological Society of London</strong>. Strategic program advice for Southeast Asia and Africa Programs.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ecosystem Services Section -->
+                        <div id="ecosystem-services" class="project-section mb-3">
+                            <h2 class="text-center mb-4 section-header" style="color: #17a2b8; border-bottom: 2px solid #17a2b8; padding-bottom: 10px;"
+                                data-bs-toggle="collapse" data-bs-target="#ecosystemContent" aria-expanded="false" aria-controls="ecosystemContent">
+                                <i class="fas fa-globe me-2"></i>ECOSYSTEM SERVICES
+                                <i class="fas fa-chevron-down collapse-arrow"></i>
+                            </h2>
+                            <div class="collapse" id="ecosystemContent">
+                                <div class="ecosystem-services-projects">
+                            <!-- Add projects here -->
+                            <p><strong>British Hemp Association</strong>. Pollinator field surveys and geospatial analysis.</p>
+                            <p><strong>Environmental Defense Fund</strong>. United States and European Union Field Margin Policy and Ecosystem Service Benefits Analysis.</p>
+                            <p><strong>North Coast Resource Partnership</strong>. Climate disaster insurance strategy (Flooding, Sea Level Rise, Wildfire).</p>
+                            <p><strong>The Watershed Research and Training Center</strong>. Water Related Ecosystem Benefits and Beneficiary Geospatial Database. Led by Spatial Informatics Group and FlowWest.</p>
+                            <p><strong>United States Forest Service International Programs</strong>. Ecosystem Service Assessment of Zimbabwe's Parks.</p>
+                            <p><strong>WWF UK</strong>. WWF UK nature, agriculture, and global footprint strategy.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conservation Finance Section -->
+                        <div id="finance" class="project-section mb-3">
+                            <h2 class="text-center mb-4 section-header" style="color: #f39c12; border-bottom: 2px solid #f39c12; padding-bottom: 10px;"
+                                data-bs-toggle="collapse" data-bs-target="#financeContent" aria-expanded="false" aria-controls="financeContent">
+                                <i class="fas fa-dollar-sign me-2"></i>CONSERVATION FINANCE
+                                <i class="fas fa-chevron-down collapse-arrow"></i>
+                            </h2>
+                            <div class="collapse" id="financeContent">
+                                <div class="finance-projects">
+                            <!-- Add projects here -->
+                            <p><strong>Air Carbon Exchange</strong>. Creating a forest health benefits marketplace.</p>
+                            <p><strong>American Rivers</strong>. Implementation and scaling of innovative water and forest restoration funding in the Western United States.</p>
+                            <p><strong>Distributed Energy Financial Group</strong>. Behavioral Resource Economics and Energy Conservation Study.</p>
+                            <p><strong>Fall River Resource Conservation District</strong>. Conservation Finance Roadmap, Feedstock Aggregation Pilot Joint Powers Authority Funding Strategy.</p>
+                            <p><strong>Healthy Eldorado Landscape Partnership</strong>. Creation and implementation of a landscape collaborative and conservation finance across the Eldorado National Forest.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
