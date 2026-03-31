@@ -11098,6 +11098,36 @@ footer.footer .social-link:hover {
   }
 }
 
+/* Scroll Down Arrow Animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.scroll-arrow {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #fff;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.scroll-arrow:hover {
+  color: #ecb807;
+  transition: color 0.3s ease;
+}
+
 .service-icon {
   background-color: #fff;
   color: #1D809F;
